@@ -1,7 +1,8 @@
-import { FETCH_POKEMONS } from "../actionTypes";
+import { FETCH_POKEMONS, LOAD } from "../actionTypes";
 
 const initialState = {
-    pokemons: ''
+    pokemons: '',
+    loading: false
 }
 
 
@@ -11,7 +12,14 @@ export default function main(state = initialState, action){
        case FETCH_POKEMONS:
        return{
            ...state,
-           pokemons: action.payload
+           pokemons: action.payload,
+      
+           
+       }
+       case LOAD:
+       return{
+           ...state,
+           loading: true
        }
 
 

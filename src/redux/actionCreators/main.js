@@ -1,19 +1,26 @@
 
-import { FETCH_POKEMONS } from '../actionTypes';
+import { FETCH_POKEMONS, LOAD } from '../actionTypes';
 
 
 
 
 export function getPokemons(){
     return async (dispatch) =>{
-        fetch('https://pokeapi.co/api/v2/pokemon')
+        await fetch('https://pokeapi.co/api/v2/pokemon')
         .then((response)=>{
           response.json()
           .then((response)=>{
             dispatch(fetchPokemons(response.results))
+            if(response){
+              dispatch(load())  
+            }
+            
           })
         })
+     
     }
+
+    
 }
 
 
@@ -25,6 +32,8 @@ export function fetchPokemons(pokemons){
 }
 
 
-export function proverka(){
-    console.log('work')
+export function load(){
+    return{
+        type: LOAD
+    }
 }

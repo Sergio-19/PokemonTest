@@ -3,12 +3,13 @@
 
 .navWrapper{
  position: absolute;
+ z-index: 6;
     top: 0;
     left: 0; 
-    border: 1px solid green;
+    
      width: 25%;
-     min-width: 280px;
-    height: 100vh;  
+     min-width: 280px; 
+     height: 100%;
     display: flex; 
     padding: 0;
 }
@@ -19,14 +20,22 @@
     padding-top: 1.3rem;
     i{
         font-size: 2rem;
+        cursor: pointer;
+        margin-left: 1rem;
+    }
+
+    i:hover{
+        opacity: .4;
     }
 }
 
 .nav{
     background: rgb(99, 97, 97);
     padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
     width: 90%;
-    border: 1px solid red;
+    height: 100%;
+   
     transition: all .3s ease-in-out    ;
     -webkit-transition: all .3s ease-in-out    ;
     -moz-transition: all .3s ease-in-out    ;
@@ -41,6 +50,10 @@
     i{
         font-size: 2rem;
         margin-right: 1rem;
+        cursor: pointer;
+    }
+    i:hover{
+        opacity: .4;
     }
 }
 
@@ -53,7 +66,7 @@
         padding: 0;
 
         li{
-            margin-bottom: 1rem;
+            margin-bottom: .5rem;
 
             a{
                 text-decoration: none;

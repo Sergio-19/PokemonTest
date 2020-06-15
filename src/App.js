@@ -6,6 +6,7 @@ import { Layout } from './components/layout/Layout';
 import {getPokemons} from './redux/actionCreators/main'
 import { getImages } from './redux/actionCreators/images';
 import { showNavHandler, hideNavHandler } from './redux/actionCreators/nav';
+import { getItem } from './redux/actionCreators/item';
 
 
 
@@ -34,8 +35,15 @@ componentDidMount(){
 function mapStateToProps(state){
   return{
     pokemons: state.main.pokemons,
+    loading: state.main.loading,
     images: state.images.images,
-    isOpen: state.nav.isOpen
+    isOpen: state.nav.isOpen,
+    name: state.item.name,
+    height: state.item.height,
+    weight: state.item.weight,
+    abilities: state.item.abilities,
+    types: state.item.types,
+    itemLoading: state.item.itemLoading
 
   }
 }
@@ -46,7 +54,8 @@ function mapDispatchToProps(dispatch){
     getPokemons: ()=> dispatch(getPokemons()),
     getImages: ()=> dispatch(getImages()),
     showNav: ()=> dispatch(showNavHandler()),
-    hideNav: ()=> dispatch(hideNavHandler())
+    hideNav: ()=> dispatch(hideNavHandler()),
+    getItem: (url)=> dispatch(getItem(url))
   
 
   }

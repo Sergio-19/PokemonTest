@@ -2,6 +2,7 @@ import React, {useContext} from 'react'
 import './nav.scss'
 import {NavLink} from 'react-router-dom'
 import { MainContext } from '../../context/MainContext';
+import { List } from '../list/List';
 
 
 export const Nav = () =>{
@@ -10,7 +11,9 @@ export const Nav = () =>{
 
 
     return(
-        <div className = 'navWrapper'>
+        <div className = 'navWrapper'
+             style = {{width: !state.isOpen ? '1rem' : '25%', height: !state.isOpen ? '1rem' : '1000px'}}
+        >
             
             <div className = 'nav' 
                   style = {{width: !state.isOpen ? '0px' : '100%'}}>
@@ -23,13 +26,19 @@ export const Nav = () =>{
             </div>
 
             <div className = 'navBar'
-                 style = {{display: state.isOpen ? "block" : 'none'}}   
-            >
+                 style = {{display: state.isOpen ? "block" : 'none'}}>
                 <ul>
                     <li onClick = {state.hideNav}><NavLink to = "/">Главная</NavLink></li>
-                    <li onClick = {state.hideNav}><a href = "">GitHub...</a></li>
+                    <li onClick = {state.hideNav}>
+                    <a href = "https://github.com/Sergio-19/PokemonTest"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                    >GitHub...</a>
+                    </li>
 
                 </ul>
+
+              <List/>
             </div>
 
             
