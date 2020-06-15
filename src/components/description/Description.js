@@ -23,7 +23,7 @@ console.log(state.abilities)
                 <img src = {state.images[state.name]}  alt = {state.name}/>
                 
                 </div>
-
+                <div className = 'descriptionTxt'>
                 <div className = 'descrPageContentName'>
                     <h2>{state.name}</h2>
                 </div>
@@ -39,7 +39,7 @@ console.log(state.abilities)
                     {Object.keys(state.types).map((type, i)=>{
                         return(
                             <React.Fragment key = {i}>
-                          <strong key = {i}>{state.types[type].type.name}</strong>&nbsp;       
+                          <strong key = {i}>{state.types[type].type.name}</strong>&nbsp;<br/>       
                             </React.Fragment>
                            
                         )
@@ -59,7 +59,7 @@ console.log(state.abilities)
                     {Object.keys(state.abilities).map((type, i)=>{
                         return(
                             <React.Fragment key = {i}>
-                          <strong key = {i}>{state.abilities[type].ability.name}</strong>&nbsp;       
+                          <strong key = {i}>{state.abilities[type].ability.name}</strong>&nbsp;<br/>       
                             </React.Fragment>
                            
                         )
@@ -80,6 +80,9 @@ console.log(state.abilities)
                 <NavLink to = '/'>
                 Главная
                 </NavLink> </div>
+                </div>
+
+                
 
                 
                 
